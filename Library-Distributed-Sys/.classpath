@@ -13,13 +13,13 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Users/adityagupta/eclipse-workspace/Library-Distributed-Sys/lib/asm-3.3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/adityagupta/eclipse-workspace/Library-Distributed-Sys/lib/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/adityagupta/eclipse-workspace/Library-Distributed-Sys/lib/hsqldb.jar"/>
-	<classpathentry kind="lib" path="/Users/adityagupta/eclipse-workspace/Library-Distributed-Sys/lib/httpclient-4.3.6.jar"/>
-	<classpathentry kind="lib" path="/Users/adityagupta/eclipse-workspace/Library-Distributed-Sys/lib/httpcore-4.3.3.jar"/>
-	<classpathentry kind="lib" path="/Users/adityagupta/eclipse-workspace/Library-Distributed-Sys/lib/javax.servlet.jar"/>
-	<classpathentry kind="lib" path="/Users/adityagupta/eclipse-workspace/Library-Distributed-Sys/lib/jersey-bundle-1.15.jar"/>
-	<classpathentry kind="lib" path="/Users/adityagupta/eclipse-workspace/Library-Distributed-Sys/lib/kxml2-2.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/adityagupta/git/Library-Distributed-System/Library-Distributed-Sys/lib/asm-3.3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/adityagupta/git/Library-Distributed-System/Library-Distributed-Sys/lib/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/adityagupta/git/Library-Distributed-System/Library-Distributed-Sys/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="/Users/adityagupta/git/Library-Distributed-System/Library-Distributed-Sys/lib/httpclient-4.3.6.jar"/>
+	<classpathentry kind="lib" path="/Users/adityagupta/git/Library-Distributed-System/Library-Distributed-Sys/lib/httpcore-4.3.3.jar"/>
+	<classpathentry kind="lib" path="/Users/adityagupta/git/Library-Distributed-System/Library-Distributed-Sys/lib/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="/Users/adityagupta/git/Library-Distributed-System/Library-Distributed-Sys/lib/jersey-bundle-1.15.jar"/>
+	<classpathentry kind="lib" path="/Users/adityagupta/git/Library-Distributed-System/Library-Distributed-Sys/lib/kxml2-2.3.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -38,7 +38,7 @@ public class ParseHelper {
 
 				if (event == XmlPullParser.START_TAG && pullParser.getName().equals("price")) {
 					event = pullParser.next();
-					book.setPrice(Integer.parseInt(pullParser.getText()));
+					book.setPrice(pullParser.getText());
 				}
 
 				if (event == XmlPullParser.END_TAG && pullParser.getName().equals("book")) {

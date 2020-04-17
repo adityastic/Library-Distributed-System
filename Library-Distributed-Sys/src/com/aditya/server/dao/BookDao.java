@@ -38,7 +38,7 @@ public enum BookDao {
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
 				arrayList.add(
-						new Book(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+						new Book(rs.getInt(1), rs.getString(2), rs.getString(3)));
 			}
 			return arrayList;
 		} catch (Exception e) {
@@ -55,7 +55,7 @@ public enum BookDao {
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
 				arrayList.add(
-						new Book(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+						new Book(rs.getInt(1), rs.getString(2), rs.getString(3)));
 			}
 			return arrayList;
 		} catch (Exception e) {
