@@ -19,6 +19,9 @@ import com.aditya.model.Student;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class IssueBook {
 
@@ -145,6 +148,34 @@ public class IssueBook {
 		table_2 = new JTable(
 				new DefaultTableModel(new Object[][] {}, new String[] { "Id", "Student Name", "Book Issued"}));
 		scrollPane_2.setViewportView(table_2);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("Options");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Populate Table");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				for (ArrayList<Integer> ib : new ArrayList<ArrayList<Integer>>(){{
+					add(new ArrayList<Integer>() {{ add(4); add(5);}});
+					add(new ArrayList<Integer>() {{ add(1); add(1);}});
+					add(new ArrayList<Integer>() {{ add(2); add(1);}});
+					add(new ArrayList<Integer>() {{ add(3); add(1);}});
+					add(new ArrayList<Integer>() {{ add(1); add(1);}});
+					add(new ArrayList<Integer>() {{ add(1); add(1);}});
+					add(new ArrayList<Integer>() {{ add(1); add(4);}});
+					add(new ArrayList<Integer>() {{ add(1); add(5);}});
+					add(new ArrayList<Integer>() {{ add(1); add(6);}});
+					add(new ArrayList<Integer>() {{ add(1); add(1);}});
+				}}) {
+					IssueBookService.issueBook(ib.get(0), ib.get(1));
+				}
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem);
 
 		viewBooksData();
 		viewStudent();

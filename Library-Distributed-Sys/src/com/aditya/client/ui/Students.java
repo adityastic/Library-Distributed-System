@@ -9,13 +9,18 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import com.aditya.client.service.BookService;
 import com.aditya.client.service.StudentService;
+import com.aditya.model.Book;
 import com.aditya.model.Student;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class Students {
 
@@ -29,6 +34,9 @@ public class Students {
 	private int rowId;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JMenuBar menuBar;
+	private JMenu mnNewMenu;
+	private JMenuItem mntmNewMenuItem;
 
 	/**
 	 * Launch the application.
@@ -132,6 +140,28 @@ public class Students {
 		});
 		btnNewButton_1_1.setBounds(338, 331, 102, 29);
 		frame.getContentPane().add(btnNewButton_1_1);
+		
+		menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		mnNewMenu = new JMenu("Options");
+		menuBar.add(mnNewMenu);
+		
+		mntmNewMenuItem = new JMenuItem("Populate Table");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				for (Student student : new ArrayList<Student>(){{
+					add(new Student(0, "Aditya"));
+					add(new Student(0, "Yash"));
+					add(new Student(0, "Rupal"));
+					add(new Student(0, "Vivek"));
+				}}) {
+					StudentService.addStudent(student.getName());
+				}
+			}
+		});
+		
+		mnNewMenu.add(mntmNewMenuItem);
 
 		ViewData();
 

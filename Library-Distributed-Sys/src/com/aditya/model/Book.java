@@ -6,10 +6,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "book")
 @XmlType(propOrder = { "id", "name", "price" })
 public class Book {
-	private String name;
-	private int id, price;
+	private String name, price;
+	private int id;
 	
-	public Book(int id, String name, int price) {
+	public Book(int id, String name, String price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -36,11 +36,11 @@ public class Book {
 		this.name = name;
 	}
 
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 }

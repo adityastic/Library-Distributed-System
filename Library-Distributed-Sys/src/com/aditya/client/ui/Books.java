@@ -16,6 +16,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
 
 public class Books {
 
@@ -31,6 +34,7 @@ public class Books {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JLabel lblNewLabel_1_2;
+	private JMenuBar menuBar;
 
 	/**
 	 * Launch the application.
@@ -143,6 +147,30 @@ public class Books {
 		lblNewLabel_1_2 = new JLabel("Price");
 		lblNewLabel_1_2.setBounds(69, 361, 61, 16);
 		frame.getContentPane().add(lblNewLabel_1_2);
+		
+		menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("Options");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Populate Table");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				for (Book book : new ArrayList<Book>(){{
+					add(new Book(0, "Harry Potter", "99"));
+					add(new Book(0, "Sisters", "49"));
+					add(new Book(0, "Flamingo", "65"));
+					add(new Book(0, "Fumes", "99"));
+					add(new Book(0, "Crook", "9"));
+				}}) {
+					BookService.addBook(book.getName(), String.valueOf(book.getPrice()));
+				}
+			}
+		});
+		
+		mnNewMenu.add(mntmNewMenuItem);
 
 		ViewData();
 
