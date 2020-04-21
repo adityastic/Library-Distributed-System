@@ -158,10 +158,23 @@ public class Students {
 				}}) {
 					StudentService.addStudent(student.getName());
 				}
+				ViewData();
 			}
 		});
 		
 		mnNewMenu.add(mntmNewMenuItem);
+
+
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Delete all entries");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblNewLabel.setText((StudentService.deleteAllStudents())
+						? "All Entries Deteled Successfully"
+						: "Error Deleting Entries");
+				ViewData();
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_1);
 
 		ViewData();
 

@@ -167,10 +167,22 @@ public class Books {
 				}}) {
 					BookService.addBook(book.getName(), String.valueOf(book.getPrice()));
 				}
+				ViewData();
 			}
 		});
 		
 		mnNewMenu.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Delete all entries");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblNewLabel.setText((BookService.deleteAllBooks())
+						? "All Entries Deteled Successfully"
+						: "Error Deleting Entries");
+				ViewData();
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_1);
 
 		ViewData();
 
@@ -215,7 +227,7 @@ public class Books {
 				} else {
 					lblNewLabel.setText((BookService.updateBook(rowId, textField_1.getText(), textField_2.getText()))
 									? "Update Successfully"
-									: "Not Successfully");
+									: "Not Updated Successfully");
 					ViewData();
 				}
 			}

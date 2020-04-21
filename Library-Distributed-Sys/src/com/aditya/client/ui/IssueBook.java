@@ -173,9 +173,25 @@ public class IssueBook {
 				}}) {
 					IssueBookService.issueBook(ib.get(0), ib.get(1));
 				}
+				viewBooksData();
+				viewStudent();
+				viewIssuedBooks();
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem);
+
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Delete all entries");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblNewLabel.setText((IssueBookService.deleteAllIssuedBooks())
+						? "All Entries Deteled Successfully"
+						: "Error Deleting Entries");
+				viewBooksData();
+				viewStudent();
+				viewIssuedBooks();
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_1);
 
 		viewBooksData();
 		viewStudent();

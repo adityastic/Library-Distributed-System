@@ -5,6 +5,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 import com.aditya.model.IssuedBook;
+import com.aditya.server.dao.BookDao;
 import com.aditya.server.dao.IssueBookDao;
 
 @Path("/issued-books")
@@ -24,4 +25,11 @@ public class IssueBookResource {
 			@FormParam("book_id") int bookID) {
 		return IssueBookDao.INSTANCE.issueBook(studentID, bookID) ? "Issued Book Successfully" : "Error Issuing Book";
 	}
+
+	@DELETE
+	@Produces(MediaType.TEXT_HTML)
+	public String deleteAllBook() {
+		return IssueBookDao.INSTANCE.deleteAllIssuedBooks() ? "All Issued Books Deleted Successfully" : "Error Deleting Issued Books";
+	}
+
 }

@@ -122,4 +122,26 @@ public class StudentService {
 		}
 		return false;
 	}
+
+	public static boolean deleteAllStudents() {
+		try {
+			URI uri = new URIBuilder()
+					.setScheme("http")
+					.setHost("localhost")
+					.setPort(8080)
+					.setPath(URL)
+					.build();
+
+			HttpDelete httpDelete = new HttpDelete(uri);
+			httpDelete.setHeader("Accept", "text/html");
+			CloseableHttpClient client = HttpClients.createDefault();
+
+			CloseableHttpResponse response = client.execute(httpDelete);
+
+			return EntityUtils.toString(response.getEntity()).equals("All Students Deleted Successfully");
+		} catch (URISyntaxException | IOException ex) {
+			ex.printStackTrace();
+		}
+		return false;
+	}
 }

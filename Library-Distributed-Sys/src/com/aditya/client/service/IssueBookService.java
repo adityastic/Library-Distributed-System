@@ -9,6 +9,7 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -71,5 +72,27 @@ public class IssueBookService {
 			ex.printStackTrace();
 		}
 		return null;
+	}
+
+	public static boolean deleteAllIssuedBooks() {
+		try {
+			URI uri = new URIBuilder()
+					.setScheme("http")
+					.setHost("localhost")
+					.setPort(8080)
+					.setPath(URL)
+					.build();
+
+			HttpDelete httpDelete = new HttpDelete(uri);
+			httpDelete.setHeader("Accept", "text/html");
+			CloseableHttpClient client = HttpClients.createDefault();
+
+			CloseableHttpResponse response = client.execute(httpDelete);
+			
+			return EntityUtils.toString(response.getEntity()).equals("All Issued Books Deleted Successfully");
+		} catch (URISyntaxException | IOException ex) {
+			ex.printStackTrace();
+		}
+		return false;
 	}
 }

@@ -4,6 +4,7 @@ import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.aditya.model.IssuedBook;
@@ -42,5 +43,16 @@ public enum IssueBookDao {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public boolean deleteAllIssuedBooks() {
+		try {
+			Statement stmt = DatabaseConnector.getConnection().createStatement();
+			stmt.executeUpdate("TRUNCATE TABLE issue_book RESTART IDENTITY AND COMMIT");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 }
