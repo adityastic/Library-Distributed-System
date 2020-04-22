@@ -140,7 +140,16 @@ public class Main {
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Clear All Tabbles");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				IssueBookService.deleteAllIssuedBooks();
+				StudentService.deleteAllStudents();
+				BookService.deleteAllBooks();
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_1);
 
 	}
-
 }
